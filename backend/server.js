@@ -34,6 +34,7 @@ connectToDatabase();
 app.use('/books', searchpageRoute);
 app.use('/api/wishlist', wishlistRoute);
 app.use('/api/cartlist', cartlistRoute);
+//app.use('/books/:id/review', reviewRoutes);
 
 app.use(errorHandler);
 
@@ -47,7 +48,7 @@ app.use('/api/users', userRoutes)
 app.use(notFound_1)
 app.use(errorHandler_1)
 
-app.use('/api/bookreview', reviewRoutes)
+//app.use('/api/bookreview', reviewRoutes)
 
 
 app.use(notFound_5)

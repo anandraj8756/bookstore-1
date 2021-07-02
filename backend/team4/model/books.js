@@ -2,9 +2,21 @@
 // const reviewSchema = require('../../team5/model/review')
 // const AuthorSchema = require('./authors');
 
+
+
 const mongoose = require('mongoose');
+
+
+
 const Schema = mongoose.Schema;
 const BooksSchema = new Schema({
+
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User',
+      },
+      
     title: {
         type: String,
         unique: false,
@@ -15,6 +27,7 @@ const BooksSchema = new Schema({
         index: true,
         unique: true
     },
+     
     category: {
         type: String,
         lowercase: true,
@@ -45,6 +58,17 @@ const BooksSchema = new Schema({
         match: [/[a-zA-Z]{4,}/, 'Please provide a valid Author'],
         index: true
     },
+    //reviews: [reviewSchema],
+     rating: {
+       type: Number,
+       required: true,
+       default: 0,
+     },
+     numReviews: {
+       type: Number,
+       required: true,
+       default: 0,
+     },
 
     discount: {
         type: Number,
