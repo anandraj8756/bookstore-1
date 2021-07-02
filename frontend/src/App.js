@@ -20,6 +20,7 @@ import ForgotPasswordScreen from './Team1/screens/ForgotPasswordScreen';
 import NewPasswordScreen from './Team1/screens/NewPasswordScreen';
 import CartPage from "./Team4/Screen/cartlist/cartlist";
 import WishPage from "./Team4/Screen/wishlist/wishlist";
+import ReviewPage from "./Team5/review";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/cartlist" component={CartPage}></Route>
 
 
+                <Route path="/reviewform" component={ReviewPage}></Route>
 
                 <Route path='/login' component={LoginScreen}></Route>
                 <Route path='/register' component={RegisterScreen}></Route>

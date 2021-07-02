@@ -6,6 +6,10 @@ const asyncHandler = require('express-async-handler');
 const Books = require('../../team4/model/books')
 const  Reviews = require('../model/review')
 
+const findAllreview = asyncHandler(async(req, res)=>{
+  res.status(200).json(res.advancedResults);
+})
+
 
 // import Product from '../model/review.js'
 
@@ -37,7 +41,8 @@ const createProductReview = asyncHandler(async (req, res) => {
         book : req.params.id
       }
       const product = await Reviews.create(review)
-  
+
+    
       // product.reviews.push(review)
   
       // product.numReviews = product.reviews.length
@@ -57,4 +62,4 @@ const createProductReview = asyncHandler(async (req, res) => {
 
 //  export {createProductReview}
 
- module.exports = {createProductReview};
+ module.exports = {createProductReview, findAllreview};
